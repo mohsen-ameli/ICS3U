@@ -2,21 +2,30 @@
    =================
    Author       : Mohsen Ameli
    Class        : ICS3U
-   Date Created : May 5th, 2021
+   Date Created : May 14th, 2021
    ===============================
-   This program will display two names and their bank balance using printf.
+   This program will take in mass from the user and display the energy it can produce
+   and the number of light bulbs it can light.
 */
+import java.util.*;
 public class Energy {
     public static void main (String[] args)
     {
         // vars
-        String Juanita          = "Juanita";
-        String Juan             = "Juan";
-        double juanita_balance  = 2345678.99;
-        double juan_balance     = 15455.26;
+        double bulbs;
+        double m; // mass
+        double e; // energy
+        final double c = 3 * 10 * 10 * 10 * 10 * 10 * 10 * 10 * 10; // speed of light
 
-        // printf
-        System.out.printf("%s's bank account balance is $%,.2f \n", Juanita, juanita_balance);
-        System.out.printf("\t%s's bank account balance is $%,.2f", Juan, juan_balance);
+        // getting user's desired mass
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please enter your desired mass (kg): ");
+        m = sc.nextDouble();
+
+        // Display the results
+        e = m * c * c;
+        System.out.printf("The energy that can be produced with the mass you provided is (Joules): %,20.3f \n", e);
+        bulbs = e / 360000;
+        System.out.printf("You can also light bulbs:  %20.3f", bulbs);
     }
 }
